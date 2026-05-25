@@ -14,12 +14,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
 
-    @NotNull
+    @NotNull(message = "Nome de Usuário/E-mail é obrigatorio!")
     @Column(unique = true)
     private String userName;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "experiencie_level")
+    @NotNull(message = "Nível de senioridade é obrigatorio!")
     private ExperienceLevel experienceLevel;
 
     @Column(name = "creation_date")
